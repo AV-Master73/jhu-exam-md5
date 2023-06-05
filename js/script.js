@@ -159,8 +159,10 @@ $(function() { // Same as document.addEventListener("DOMContentLoaded"...
     // 'categoryShort' is a short_name for a category
     dc.loadMenuItems = function(categoryShort) {
         showLoading("#main-content");
+        chosenCategoryUrl = menuItemsUrl + categoryShort + '.json';
+        console.log(chosenCategoryUrl); 
         $ajaxUtils.sendGetRequest(
-            menuItemsUrl + categoryShort,
+            chosenCategoryUrl,
             buildAndShowMenuItemsHTML);
     };
 
